@@ -89,6 +89,7 @@ Builder.types.pro_element = {
                     'title': 'Content',
                     'fields': {
 
+                        // custom content items.
                         field_content: {
                             label: 'Custom content items',
                             type: 'content-items',
@@ -121,11 +122,10 @@ Builder.types.pro_element = {
                         // text (default, if type is not set), defines a text field
                         field_text: {
                             type: 'text',
-                            disabled: 'disabled',
                             label: 'Field text'
                         },
 
-                        // text (default, if type is not set), defines a text field
+                        // number, numerical input field
                         field_number: {
                             type: 'number',
                             label: 'Field number'
