@@ -1,3 +1,50 @@
+// Define a content item used in your element
+Builder.types.custom_content_item = {
+
+    title: 'Custom content element',
+
+    mixins: [Builder.entity, Builder.element, Builder.item],
+
+    params: function (params) {
+
+        return {
+
+            // sidebar width
+            width: 600,
+
+            fields: {
+
+                // text element / default type: "text"
+                content: {
+                    label: 'Content'
+                },
+
+                // link picker, using predefined field
+                link: params.element.link,
+
+                // image picker, using predefined field
+                image: params.element.image,
+
+                // image picker, using self-defined field
+                image2: {
+                    label: 'Image 2',
+                    type: 'image'
+                }
+            }
+        }
+    },
+
+    data: function () {
+        // return default values
+        return {
+            props: {
+                // ...
+            }
+        };
+    }
+};
+
+
 // register the following element definition with the builder
 Builder.types.pro_element = {
 
@@ -14,7 +61,7 @@ Builder.types.pro_element = {
     element: true,
 
     // includes required functionality from the Builder
-    mixins: [Builder.entity, Builder.element],
+    mixins: [Builder.entity, Builder.element, Builder.container],
 
     // Set default values for fields
     data: function () {
@@ -41,6 +88,14 @@ Builder.types.pro_element = {
                 {
                     'title': 'Content',
                     'fields': {
+
+                        field_content: {
+                            label: 'Custom content items',
+                            type: 'content-items',
+                            item: 'custom_content_item',
+                            title: 'content',
+                            button: 'Add Custom content item'
+                        },
 
                         // checkbox, defines a boolean field
                         field_checkbox: {
