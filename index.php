@@ -22,4 +22,10 @@ return [
 
     ],
 
+    'config' => [
+
+        'element' => true
+
+    ]
+
 ];
