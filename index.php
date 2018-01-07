@@ -2,13 +2,13 @@
 
 return [
 
-    // module name
-    'name' => 'yootheme/pro-element',
+    // Module name
+    'name' => 'yootheme/example-element',
 
-    // how this element is referenced inside the builder
-    'builder' => 'pro_element',
+    // How this element is referenced inside the builder
+    'builder' => 'example_element',
 
-    // render this element on the website
+    // Render this element on the website
     'render' => function ($element) {
         return $this->app->view->render(__DIR__.'/template.php', ['element' => $element]);
     },
@@ -16,8 +16,8 @@ return [
     'events' => [
 
         'theme.admin' => function () {
-            // load the JavaScript that creates the form elements in the builder
-            $this->app->scripts->add('builder-pro-element', __DIR__.'/pro-element.js', 'customizer-builder');
+            // Load the JavaScript that creates the elements settings in the builder
+            $this->app->scripts->add('builder-example-element', __DIR__.'/example-element.js', 'customizer-builder');
         }
 
     ],

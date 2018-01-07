@@ -1,7 +1,7 @@
 // Define a content item used in your element
-Builder.types.custom_content_item = {
+Builder.types.example_element_item = {
 
-    title: 'Custom content element',
+    title: 'Item',
 
     mixins: [Builder.entity, Builder.element, Builder.item],
 
@@ -9,23 +9,23 @@ Builder.types.custom_content_item = {
 
         return {
 
-            // sidebar width
+            // Sidebar width
             width: 600,
 
             fields: {
 
-                // text element / default type: "text"
+                // Text (default, if type is not set)
                 content: {
                     label: 'Content'
                 },
 
-                // link picker, using predefined field
+                // Link (Using a field predefined in `yootheme/vendor/yootheme/theme/modules/builder/app/elements/params.js`)
                 link: params.element.link,
 
-                // image picker, using predefined field
+                // Image (Using a field predefined in `yootheme/vendor/yootheme/theme/modules/builder/app/elements/params.js`)
                 image: params.element.image,
 
-                // image picker, using self-defined field
+                // Image
                 image2: {
                     label: 'Image 2',
                     type: 'image'
@@ -35,7 +35,7 @@ Builder.types.custom_content_item = {
     },
 
     data: function () {
-        // return default values
+        // Return default values
         return {
             props: {
                 // ...
@@ -45,22 +45,22 @@ Builder.types.custom_content_item = {
 };
 
 
-// register the following element definition with the builder
+// Register the following element definition with the builder
 Builder.types.pro_element = {
 
-    // label in the interface
-    title: 'Custom Element',
+    // Label in the interface
+    title: 'Example Element',
 
-    // icon in "new element" dialog
-    icon: '{+$theme}-child/builder/pro-element/icon.svg',
+    // Icon in `New element` dialog
+    icon: '{+$theme}_child/builder/example-element/icon.svg',
 
-    // icon in builder overview
-    iconSmall: '{+$theme}-child/builder/pro-element/icon-small.svg',
+    // Icon in builder overview
+    iconSmall: '{+$theme}_child/builder/example-element/icon-small.svg',
 
-    // Show in "new element" dialog
+    // Show in `New element` dialog
     element: true,
 
-    // includes required functionality from the Builder
+    // Includes required functionality from the Builder
     mixins: [Builder.entity, Builder.element, Builder.container],
 
     // Set default values for fields
@@ -72,11 +72,12 @@ Builder.types.pro_element = {
         };
     },
 
-    // a function that returns a JS object which is then used to render the interface
-    // params are the currently stored parameters for this element
+    // A function that returns a JS object which is then used to render the interface
+    // Params are the currently stored parameters for this element
     params: function (params) {
 
-        var element = params.element; // just for easier access later on
+        // Just for easier access later on
+        var element = params.element;
 
         return {
 
@@ -84,33 +85,38 @@ Builder.types.pro_element = {
 
             tabs: [
 
-                // the 1st tab usually contains all fields to fill in the actual content
+                // The 1st tab usually contains all fields to fill in the actual content
                 {
                     'title': 'Content',
                     'fields': {
 
-                        // custom content items.
+                        // Content items
                         field_content: {
-                            label: 'Custom content items',
+                            label: 'Content Items',
                             type: 'content-items',
-                            item: 'custom_content_item',
-                            title: 'content',
-                            button: 'Add Custom content item'
+                            item: 'example_element_item',
+                            title: 'content'
+                        }
+
+                    }
+                },
+
+                // The 2nd tab usually includes fields with settings HOW to display the content
+                {
+                    title: 'Settings',
+                    fields: {
+
+                        // Text (default, if type is not set), defines an input field
+                        field_text: {
+                            label: 'Text',
+                            type: 'text'
                         },
 
-                        // checkbox, defines a boolean field
-                        field_checkbox: {
-                            type: 'checkbox',
-                            label: 'Field two label',
-                            description: 'Explanation that appears below the field',
-                            text: 'Field Text'
-                        },
-
-                        // select, defines an int or string field
+                        // Select, defines an select box
                         field_select: {
-                            type: 'select',
-                            label: 'Field three label',
+                            label: 'Select',
                             description: 'Explanation that appears below the field',
+                            type: 'select',
                             text: 'Field Text',
                             options: {
                                 'Option 1': 0,
@@ -119,21 +125,23 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // text (default, if type is not set), defines a text field
-                        field_text: {
-                            type: 'text',
-                            label: 'Field text'
-                        },
-
-                        // number, numerical input field
+                        // Number, numerical input field
                         field_number: {
-                            type: 'number',
-                            label: 'Field number'
+                            label: 'Number',
+                            type: 'number'
                         },
 
-                        // a group of radio buttons
+                        // Checkbox, defines a checkbox
+                        field_checkbox: {
+                            label: 'Checkbox',
+                            description: 'Explanation that appears below the field',
+                            type: 'checkbox',
+                            text: 'Field Text'
+                        },
+
+                        // Radio, defines a group of radio buttons
                         field_radio: {
-                            label: 'Field radio',
+                            label: 'Radio',
                             type: 'radio',
                             name: 'radio_group',
                             options: {
@@ -143,20 +151,10 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // A plain textarea for multiple lines of text
-                        field_textarea: {
-                            label: 'Field textarea',
-                            type: 'textarea',
-                            attrs: {
-                                rows: 10,
-                                placeholder: 'Enter text...'
-                            }
-                        },
-
-                        // To input a numeric range
+                        // Range, defines an input field for a numeric range
                         field_range: {
+                            label: 'Range',
                             type: 'range',
-                            label: 'Field range',
                             attrs: {
                                 min: 1,
                                 max: 10,
@@ -164,16 +162,26 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // Visual AND code editor (if tinymce is loaded by the CMS)
+                        // Textarea, defines a plain textarea for multiple lines of text
+                        field_textarea: {
+                            label: 'Textarea',
+                            type: 'textarea',
+                            attrs: {
+                                rows: 10,
+                                placeholder: 'Enter text...'
+                            }
+                        },
+
+                        // Editor, defines a visual AND code editor (depends on the settings in the CMS)
                         field_editor: {
-                            label: 'Field editor',
+                            label: 'Editor',
                             type: 'editor'
                         },
 
-                        // Code editor only
+                        // Defines a code editor only
                         field_editor2: {
+                            label: 'Code editor',
                             type: 'editor',
-                            label: 'CSS editor',
                             editor: 'code',
                             mode: 'css',
                             attrs: {
@@ -181,58 +189,58 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // pick image from media library
+                        // Image, defines an image picker using the media library
                         field_image: {
-                            label: 'Field image',
+                            label: 'Image',
                             type: 'image'
                         },
 
-                        // pick video from media library
+                        // Video, defines a video picker using the media library
                         field_video: {
-                            label: 'Field video',
+                            label: 'Video',
                             type: 'video'
                         },
 
-                        // a visual color picker
-                        field_color: {
-                            label: 'Field color',
-                            type: 'color'
-                        },
-
-                        // pick system and google webfonts
-                        field_font: {
-                            label: 'Field font',
-                            type: 'font'
-                        },
-
-                        // pick an icon from the UIkit icon library
-                        field_icon: {
-                            label: 'Field icon',
-                            type: 'icon'
-                        },
-
-                        // pick a location from an interactive map
-                        field_location: {
-                            label: 'Field location',
-                            type: 'location'
-                        },
-
-                        // pick a menu from a CMS dialog
-                        field_menu: {
-                            label: 'Field menu',
-                            type: 'menu'
-                        },
-
-                        // enter link manually or pick a link from a CMS dialog
+                        // Link, defines a link picker
                         field_link: {
-                            label: 'Field link',
+                            label: 'Link',
                             type: 'link'
                         },
 
-                        // pick one out of multiple images
+                        // Color, defines a color picker
+                        field_color: {
+                            label: 'Color',
+                            type: 'color'
+                        },
+
+                        // Font, defines a font picker
+                        field_font: {
+                            label: 'Font',
+                            type: 'font'
+                        },
+
+                        // Icon, defines an icon picker for the UIkit icon library
+                        field_icon: {
+                            label: 'Icon',
+                            type: 'icon'
+                        },
+
+                        // Location, defines an interactive map to pick a location
+                        field_location: {
+                            label: 'Location',
+                            type: 'location'
+                        },
+
+                        // Menu, defines a menu picker using the CMS dialog
+                        field_menu: {
+                            label: 'Menu',
+                            type: 'menu'
+                        },
+
+                        // Select-img, defines an image picker for a predefined set of images
                         field_select_img: {
-                            label: 'Field select-img',
-                            title: 'Select a grid layout',
+                            label: 'Select-img',
+                            title: 'Select an image',
                             type: 'select-img',
                             default: '1-1',
                             options: {
@@ -251,9 +259,9 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // select one out of multiple icons
+                        // Select-icon, defines an icon picker for a predefined set of icons
                         field_select_icon: {
-                            label: 'Field select-icon',
+                            label: 'Select-icon',
                             type: 'select-icon',
                             options: {
                                 '': {
@@ -280,7 +288,7 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // arrange any field types in a grid next to each other
+                        // Grid, arrange any field types in a grid next to each other
                         field_grid: {
                             type: 'grid',
                             fields: {
@@ -293,24 +301,17 @@ Builder.types.pro_element = {
                                     width: '1-2'
                                 }
                             }
-                        },
+                        }
 
                     }
                 },
 
-                // the 2nd tab usually includes fields with settings HOW to display the content
-                {
-                    title: 'Settings',
-                    fields: {
-                        // ...
-                    }
-                },
-
-                // the 3rd tab usually contains the same fields that are rendered on the element container
+                // The 3rd tab usually contains the same fields that are rendered on the element container
                 {
                     title: 'Advanced',
                     fields: {
 
+                        // Using fields predefined in `yootheme/vendor/yootheme/theme/modules/builder/app/elements/params.js`
                         name: element.name,
                         id: element.id,
                         class: element.cls
