@@ -46,7 +46,7 @@ Builder.types.example_element_item = {
 
 
 // Register the following element definition with the builder
-Builder.types.pro_element = {
+Builder.types.example_element = {
 
     // Label in the interface
     title: 'Example Element',
@@ -62,15 +62,6 @@ Builder.types.pro_element = {
 
     // Includes required functionality from the Builder
     mixins: [Builder.entity, Builder.element, Builder.container],
-
-    // Set default values for fields
-    data: function () {
-        return {
-            props: {
-                field_select: 1
-            }
-        };
-    },
 
     // A function that returns a JS object which is then used to render the interface
     // Params are the currently stored parameters for this element
@@ -115,9 +106,8 @@ Builder.types.pro_element = {
                         // Select, defines an select box
                         field_select: {
                             label: 'Select',
-                            description: 'Explanation that appears below the field',
+                            description: 'Muted text that appears below the field',
                             type: 'select',
-                            text: 'Field Text',
                             options: {
                                 'Option 1': 0,
                                 'Option 2': 1,
@@ -125,7 +115,7 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // Number, numerical input field
+                        // Number, defines a numerical input field
                         field_number: {
                             label: 'Number',
                             type: 'number'
@@ -134,9 +124,9 @@ Builder.types.pro_element = {
                         // Checkbox, defines a checkbox
                         field_checkbox: {
                             label: 'Checkbox',
-                            description: 'Explanation that appears below the field',
+                            description: 'Muted text that appears below the field',
                             type: 'checkbox',
-                            text: 'Field Text'
+                            text: 'The text behind the checkbox.'
                         },
 
                         // Radio, defines a group of radio buttons
@@ -151,7 +141,7 @@ Builder.types.pro_element = {
                             }
                         },
 
-                        // Range, defines an input field for a numeric range
+                        // Range, defines an range slider with an addition input field
                         field_range: {
                             label: 'Range',
                             type: 'range',
@@ -201,7 +191,7 @@ Builder.types.pro_element = {
                             type: 'video'
                         },
 
-                        // Link, defines a link picker
+                        // Link, defines a link picker for CMS system links and files in the media library
                         field_link: {
                             label: 'Link',
                             type: 'link'
@@ -283,12 +273,11 @@ Builder.types.pro_element = {
                                 'xl': {
                                     'label': 'X-Large (Large Screens)',
                                     'icon': 'desktop',
-                                },
-
+                                }
                             }
                         },
 
-                        // Grid, arrange any field types in a grid next to each other
+                        // Grid, arranges any field types in a grid next to each other
                         field_grid: {
                             type: 'grid',
                             fields: {
@@ -320,6 +309,15 @@ Builder.types.pro_element = {
                 }
             ]
         }
+    },
+
+    // Set default values for fields
+    data: function () {
+        return {
+            props: {
+                field_select: 1
+            }
+        };
     }
 
 };
