@@ -10,14 +10,14 @@ return [
 
     // Render this element on the website
     'render' => function ($element) {
-        return $this->app->view->render(__DIR__.'/template.php', ['element' => $element]);
+        return $this->app->view->render("{$this->path}/template.php", ['element' => $element]);
     },
 
     'events' => [
 
         'theme.admin' => function () {
             // Load the JavaScript that creates the elements settings in the builder
-            $this->app->scripts->add('builder-example-element', __DIR__.'/example-element.js', 'customizer-builder');
+            $this->app->scripts->add('builder-example-element', "{$this->path}/example-element.js", 'customizer-builder');
         }
 
     ],
