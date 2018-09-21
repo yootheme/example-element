@@ -14,3 +14,8 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 - `example-element.js`: Defines all fields for the custom element
 - `template.php`: Template that renders the element on your page
 - `icon.svg`, `icon-small.svg`: Icons to display in the Builder
+
+### Migration
+
+- Install the migration package `npm install -g yootheme/custom-element-migrator`
+- run `custom-element-migrator your-custom-element.js`

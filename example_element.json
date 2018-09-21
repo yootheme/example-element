@@ -1,0 +1,223 @@
+{
+  "name": "example_element",
+  "title": "Example Element",
+  "element": true,
+  "container": true,
+  "width": 500,
+  "defaults": {
+    "field_select": 1
+  },
+  "fields": {
+    "field_content": {
+      "label": "Content Items",
+      "type": "content-items",
+      "title": "content",
+      "item": "example_element_item"
+    },
+    "field_text": {
+      "label": "Text",
+      "type": "text"
+    },
+    "field_select": {
+      "label": "Select",
+      "description": "Muted text that appears below the field",
+      "type": "select",
+      "options": {
+        "Option 1": 0,
+        "Option 2": 1,
+        "Option 3": 2
+      }
+    },
+    "field_number": {
+      "label": "Number",
+      "type": "number"
+    },
+    "field_checkbox": {
+      "label": "Checkbox",
+      "description": "Muted text that appears below the field",
+      "type": "checkbox",
+      "text": "The text behind the checkbox."
+    },
+    "field_radio": {
+      "label": "Radio",
+      "name": "radio_group",
+      "type": "radio",
+      "options": {
+        "Option 1": 0,
+        "Option 2": 1,
+        "Option 3": 2
+      }
+    },
+    "field_range": {
+      "label": "Range",
+      "type": "range",
+      "attrs": {
+        "min": 1,
+        "max": 10,
+        "step": 0.5
+      }
+    },
+    "field_textarea": {
+      "label": "Textarea",
+      "type": "textarea",
+      "attrs": {
+        "rows": 10,
+        "placeholder": "Enter text..."
+      }
+    },
+    "field_editor": {
+      "label": "Editor",
+      "type": "editor"
+    },
+    "field_editor2": {
+      "label": "Code editor",
+      "type": "editor",
+      "editor": "code",
+      "mode": "css",
+      "attrs": {
+        "debounce": 500
+      }
+    },
+    "field_image": {
+      "label": "Image",
+      "type": "image"
+    },
+    "field_video": {
+      "label": "Video",
+      "type": "video"
+    },
+    "field_link": {
+      "label": "Link",
+      "type": "link"
+    },
+    "field_color": {
+      "label": "Color",
+      "type": "color"
+    },
+    "field_font": {
+      "label": "Font",
+      "type": "font"
+    },
+    "field_icon": {
+      "label": "Icon",
+      "type": "icon"
+    },
+    "field_location": {
+      "label": "Location",
+      "type": "location"
+    },
+    "field_menu": {
+      "label": "Menu",
+      "type": "menu"
+    },
+    "field_select_img": {
+      "label": "Select-img",
+      "type": "select-img",
+      "default": "1-1",
+      "title": "Select an image",
+      "options": {
+        "1-1": {
+          "label": "Whole",
+          "src": "$ASSETS/images/row/whole.svg"
+        },
+        "1-2": {
+          "label": "Halves",
+          "src": "$ASSETS/images/row/halves.svg"
+        },
+        "1-3": {
+          "label": "Thirds",
+          "src": "$ASSETS/images/row/thirds.svg"
+        }
+      }
+    },
+    "field_select_icon": {
+      "label": "Select-icon",
+      "type": "select-icon",
+      "options": {
+        "": {
+          "label": "Always",
+          "icon": "phone"
+        },
+        "s": {
+          "label": "Small (Phone Landscape)",
+          "icon": "phone-landscape"
+        },
+        "m": {
+          "label": "Medium (Tablet Landscape)",
+          "icon": "tablet-landscape"
+        },
+        "l": {
+          "label": "Large (Desktop)",
+          "icon": "laptop"
+        },
+        "xl": {
+          "label": "X-Large (Large Screens)",
+          "icon": "desktop"
+        }
+      }
+    },
+    "field_grid_one": {
+      "label": "Text 1"
+    },
+    "field_grid_two": {
+      "label": "Text 2"
+    },
+    "name": "${NAME}",
+    "id": "${ID}",
+    "class": "${CLS}"
+  },
+  "fieldset": {
+    "default": {
+      "type": "tabs",
+      "fields": [
+        {
+          "title": "Content",
+          "fields": [
+            "field_content"
+          ]
+        },
+        {
+          "title": "Settings",
+          "fields": [
+            "field_text",
+            "field_select",
+            "field_number",
+            "field_checkbox",
+            "field_radio",
+            "field_range",
+            "field_textarea",
+            "field_editor",
+            "field_editor2",
+            "field_image",
+            "field_video",
+            "field_link",
+            "field_color",
+            "field_font",
+            "field_icon",
+            "field_location",
+            "field_menu",
+            "field_select_img",
+            "field_select_icon",
+            {
+              "name": "field_grid",
+              "type": "grid",
+              "width": "1-2",
+              "fields": [
+                "field_grid_one",
+                "field_grid_two"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Advanced",
+          "fields": [
+            "name",
+            "id",
+            "class"
+          ]
+        }
+      ]
+    }
+  }
+}
