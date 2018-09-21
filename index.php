@@ -8,6 +8,9 @@ return [
     // How this element is referenced inside the builder
     'builder' => 'example_element',
 
+    // Register your element definition files
+    'definitions' => ['example_elemenet.json', 'example_element_item.json'],
+
     // Render this element on the website
     'render' => function ($element) {
         return $this->app->view->render("{$this->path}/template.php", ['element' => $element]);
