@@ -18,4 +18,4 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 
 ### Migration
 
-- Go here: https://github.com/dasdeck/custom-element-converter to find a migration util to migrate your custom element to the updated format
+- to migrate a legacy component definition you can use `yarn migrate my-custom-element.js`

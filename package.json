@@ -4,7 +4,7 @@
   "description": "Example to demonstrate a custom element for the YOOtheme Pro builder. Add this to your child theme and use it as a starter for your own custom elements.",
   "scripts": {
     "build": "webpack",
-    "migrate": "./migrate.js"
+    "migrate": "node ./migrate.js"
   },
   "repository": {
     "type": "git",

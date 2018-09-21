@@ -1,5 +1,6 @@
 const {concat, assign, pick, get, map, isObject, some, cloneDeep, mapValues, isUndefined, pickBy, forEach, omit, difference, isFunction} = require('lodash');
-
+const path = require('path');
+const fs = require('fs');
 const params = {
     _image_dimension: {
         type: 'grid',
@@ -240,7 +241,7 @@ function mergeFieldsRecursively(fieldsToMerge, targetFields, element) {
             if ( field.type === 'grid' && field.style) {
 
                 if (field.style !== 'group') {
-                    debugger
+                    throw 'unexpected style';
                 }
 
                 debugLog('style delete');
@@ -252,7 +253,7 @@ function mergeFieldsRecursively(fieldsToMerge, targetFields, element) {
                 field.width = finalWidths[0];
                 debugLog({width: field.width});
             } else if (finalWidths.length > 1) {
-                debugger
+                throw 'unexpected width';
             }
 
             field = cleanupField(field, key, element);
