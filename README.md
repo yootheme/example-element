@@ -11,11 +11,11 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 ## Files
 
 - `index.php`: Defines the element and registers it so that the Builder knows about it
-- `example-element.js`: Defines all fields for the custom element
+- `example_element_item.json`, `example_element.json`: Defines your custom element
+- `example-element.js`: Defines your custom code (optional)
 - `template.php`: Template that renders the element on your page
 - `icon.svg`, `icon-small.svg`: Icons to display in the Builder
 
 ### Migration
 
-- Install the migration package `npm install -g yootheme/custom-element-migrator`
-- run `custom-element-migrator your-custom-element.js`
+- Go here: https://github.com/dasdeck/custom-element-converter to find a migration util to migrate your custom element to the updated format
