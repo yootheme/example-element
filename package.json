@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "description": "Example to demonstrate a custom element for the YOOtheme Pro builder. Add this to your child theme and use it as a starter for your own custom elements.",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "migrate": "./migrate.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yootheme/example-element.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yootheme/example-element/issues"
   },
-  "homepage": "https://github.com/yootheme/example-element#readme"
+  "homepage": "https://github.com/yootheme/example-element#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
 }
