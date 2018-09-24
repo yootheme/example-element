@@ -8,9 +8,6 @@ return [
     // How this element is referenced inside the builder
     'builder' => 'example_element',
 
-    // Register your element definition files
-    'definitions' => ['example_elemenet.json', 'example_element_item.json'],
-
     // Render this element on the website
     'render' => function ($element) {
         return $this->app->view->render("{$this->path}/template.php", ['element' => $element]);
@@ -18,9 +15,9 @@ return [
 
     'events' => [
 
-        'theme.admin' => function () {
-            // Load the JavaScript that creates the elements settings in the builder
-            $this->app->scripts->add('builder-example-element', "{$this->path}/example-element.js", 'customizer-builder');
+        'builder.init' => function ($elements, $builder) {
+            $elements->set('example_elemenet', json_decode(file_get_contents("{$this->path}/example_elemenet.json"), true));
+            $elements->set('example_element_item', json_decode(file_get_contents("{$this->path}/example_element_item.json"), true));
         }
 
     ],

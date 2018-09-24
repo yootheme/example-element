@@ -18,4 +18,5 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 
 ### Migration
 
-- to migrate a legacy component definition you can use `yarn migrate my-custom-element.js`
+- To migrate a legacy component definition you can use our migration tool.
+ Install dependencies with `yarn` then run `yarn migrate my-custom-element.js`

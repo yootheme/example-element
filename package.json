@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Example to demonstrate a custom element for the YOOtheme Pro builder. Add this to your child theme and use it as a starter for your own custom elements.",
   "scripts": {
-    "build": "webpack",
     "migrate": "node ./migrate.js"
   },
   "repository": {
