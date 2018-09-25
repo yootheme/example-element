@@ -48,6 +48,7 @@ function reOrderObject(obj, order, graceful = true) {
 }
 
 const rawTransformations = {
+    '{+$theme}': '${THEME}',
     '{+$builder}/row/assets/images/': '$ASSETS/images/row/',
     '$app.config.google_maps': 'this.$root.Config.values.google_maps'
 

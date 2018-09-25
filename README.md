@@ -18,6 +18,7 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 
 ### Migration
 
-- to migrate a legacy components definition (yootheme-pro <= 1.14.8) you can use `yarn migrate my-custom-element.js`
+To migrate a legacy component definition you can use our migration tool.
+First install dependencies with `yarn`, then run `yarn migrate my-custom-element.js`
 
-Used on the old example element [example-element.js](https://github.com/yootheme/example-element/blob/0a96a14fa01f7f2839866d401a89d60351b88212/example-element.js), the script would yield two json files named after the used element names [example_element.json](https://github.com/yootheme/example-element/blob/14facb382cefdddf69d6bfa57715a604f7aff305/example_element.json) and [example_element_item.json](https://github.com/yootheme/example-element/blob/14facb382cefdddf69d6bfa57715a604f7aff305/example_element_item.json) in your current working directory
+Used on the old example element [example-element.js](https://github.com/yootheme/example-element/blob/0a96a14fa01f7f2839866d401a89d60351b88212/example-element.js) (yarn migrate example-element.js), the script would emit two json files named after the used element names [example_element.json](https://github.com/yootheme/example-element/blob/14facb382cefdddf69d6bfa57715a604f7aff305/example_element.json) and [example_element_item.json](https://github.com/yootheme/example-element/blob/14facb382cefdddf69d6bfa57715a604f7aff305/example_element_item.json) in your current working directory

@@ -1,8 +1,8 @@
 {
   "name": "example_element",
   "title": "Example Element",
-  "icon": "{+$theme}_child/builder/example-element/icon.svg",
-  "iconSmall": "{+$theme}_child/builder/example-element/icon-small.svg",
+  "icon": "${THEME}_child/builder/example-element/icon.svg",
+  "iconSmall": "${THEME}_child/builder/example-element/icon-small.svg",
   "element": true,
   "container": true,
   "width": 500,
