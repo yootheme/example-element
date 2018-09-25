@@ -4,7 +4,7 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 
 ## Install
 
-1. Create and activate a [child theme](http://yootheme.com/pro/docs/#/child-themes) for YOOtheme Pro.
+1. Create and activate a [child theme](https://yootheme.com/support/yootheme-pro/joomla/child-themes) for YOOtheme Pro.
 2. Inside the child theme, place this folder, so that it is located at `yootheme-child/builder/pro-element`
 3. In the Builder, add a new element and select the `Example Element`
 
