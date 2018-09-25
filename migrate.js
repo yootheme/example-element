@@ -1,6 +1,7 @@
-const {concat, assign, pick, get, map, isObject, some, cloneDeep, mapValues, isUndefined, pickBy, forEach, omit, difference, isFunction} = require('lodash');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
+const {concat, assign, pick, get, map, isObject, some, cloneDeep, mapValues, isUndefined, pickBy, forEach, omit, difference, isFunction} = require('lodash');
+
 const params = {
     _image_dimension: {
         type: 'grid',
@@ -28,22 +29,22 @@ const params = {
             }
 
         }
-    },
+    }
+};
 
-}
 function reOrderObject(obj, order, graceful = true) {
 
     const orderedObj = {};
     const origKeys = Object.keys(obj);
+
     if (graceful) {
         order = concat(order, difference(origKeys, order));
     } else if (origKeys.length !== order.keys) {
         throw "order array must conatin equal amount of keys"
     }
 
-    forEach(order, key => {
-        orderedObj[key] = obj[key];
-    })
+    forEach(order, key => orderedObj[key] = obj[key]);
+
     return orderedObj;
 }
 
@@ -59,7 +60,7 @@ const mixinMap = {
     element: '',
     item: '',
     container: 'container',
-}
+};
 
 const panelOrder = [
     'name',
@@ -134,27 +135,6 @@ const paramsProxy = new Proxy({}, {
 
 const debugLog = x => x;
 
-function prepareParams(element) {
-    delete element.__file;
-
-    const res = {};
-
-    Object.keys(element).forEach(name => {
-
-        const newName = name.toUpperCase();
-
-        const field = cleanupField(element[name]);
-
-        if (!fieldsToInline[newName]) {
-            res[newName] = field;
-        }
-
-    });
-
-    cleanupFields(res, element);
-    return res;
-}
-
 function inlineFunction(option) {
 
     const rawString = option.toString();
@@ -175,6 +155,7 @@ function inlineFunction(option) {
 }
 
 function cleanupField(field, fieldName, element) {
+
     ['enable', 'show'].forEach(funKey => {
         const fun = field[funKey];
         if (fun) {
@@ -182,7 +163,7 @@ function cleanupField(field, fieldName, element) {
 
             field[funKey] = inlineFunction(fun);
         }
-    })
+    });
 
     if (field.attrs && field.attrs.lazy) {
         delete field.attrs.lazy;
@@ -203,13 +184,9 @@ function cleanupField(field, fieldName, element) {
 }
 
 function cleanupFields(panel, element) {
-
     forEach(panel.fields, (field, fieldName) => {
-
         if (isObject(field)) {
-
             panel.fields[fieldName] = cleanupField(field, fieldName, element);
-
         }
     });
 }
@@ -226,20 +203,20 @@ function mergeFieldsRecursively(fieldsToMerge, targetFields, element) {
         if (['group', 'grid'].includes(field.type)) {
 
             const widths = {};
-            forEach(field.fields, field => {
+            forEach(field.fields, field =>
                 forEach(field, (val, key) => {
                     if (key === 'width') {
                         widths[val] = true;
                         delete field.width;
                     }
-                });
-            });
+                })
+            );
 
             if (!field.name && !field.label) {
                 field.name = key;
             }
 
-            if ( field.type === 'grid' && field.style) {
+            if (field.type === 'grid' && field.style) {
 
                 if (field.style !== 'group') {
                     throw 'unexpected style';
@@ -314,12 +291,10 @@ function processPanel(panel, element) {
         newPanel.fieldset.default = {
 
             type: 'tabs',
-            fields: map(panel.tabs, tab => {
-                return {
-                    ...tab,
-                    fields: mergeFieldsRecursively(tab.fields, newPanel.fields, element)
-                };
-            })
+            fields: map(panel.tabs, tab => ({
+                ...tab,
+                fields: mergeFieldsRecursively(tab.fields, newPanel.fields, element)
+            }))
         };
     } else if (panel.fields) {
         newPanel.fieldset.default = {
@@ -345,8 +320,7 @@ function evaluateComponent(component, name = null) {
         ...pick(component, ['title', 'name', 'icon', 'iconSmall']),
         ...collectMixins(component),
         defaults: data && data.props
-
-    }
+    };
 
     const params = component.params;
     const panel = isFunction(params) && params(paramsProxy) || isObject(params) && params;
@@ -372,10 +346,12 @@ function evaluateComponent(component, name = null) {
 
 function convertElement(compnentDefinitionString) {
 
-    const context = {Builder: {
-        ...mixinMap,
-        types: {}
-    }};
+    const context = {
+        Builder: {
+            ...mixinMap,
+            types: {}
+        }
+    };
 
     (new Function('context', `with (context) { ${compnentDefinitionString} }`))(context);
 
