@@ -16,7 +16,7 @@ Example to demonstrate a custom element for the YOOtheme Pro builder. Add this t
 - `template.php`: Template that renders the element on your page
 - `icon.svg`, `icon-small.svg`: Icons to display in the Builder
 
-### Migration
+## Migration
 
 To migrate a legacy component definition you can use our migration tool.
 First install dependencies with `yarn`, then run `yarn migrate my-custom-element.js`
