@@ -16,7 +16,7 @@ return [
     'events' => [
 
         'builder.init' => function ($elements, $builder) {
-            $elements->set('example_elemenet', json_decode(file_get_contents("{$this->path}/example_element.json"), true));
+            $elements->set('example_element', json_decode(file_get_contents("{$this->path}/example_element.json"), true));
             $elements->set('example_element_item', json_decode(file_get_contents("{$this->path}/example_element_item.json"), true));
         }
 
