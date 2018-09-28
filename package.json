@@ -5,6 +5,9 @@
   "scripts": {
     "migrate": "node ./migrate.js"
   },
+  "engines": {
+    "node": ">=8.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yootheme/example-element.git"
