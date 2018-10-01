@@ -128,32 +128,6 @@
         }
       }
     },
-    "field_select_icon": {
-      "label": "Select-icon",
-      "type": "select-icon",
-      "options": {
-        "": {
-          "label": "Always",
-          "icon": "phone"
-        },
-        "s": {
-          "label": "Small (Phone Landscape)",
-          "icon": "phone-landscape"
-        },
-        "m": {
-          "label": "Medium (Tablet Landscape)",
-          "icon": "tablet-landscape"
-        },
-        "l": {
-          "label": "Large (Desktop)",
-          "icon": "laptop"
-        },
-        "xl": {
-          "label": "X-Large (Large Screens)",
-          "icon": "desktop"
-        }
-      }
-    },
     "field_grid_one": {
       "label": "Text 1"
     },
@@ -194,7 +168,6 @@
             "field_icon",
             "field_location",
             "field_select_img",
-            "field_select_icon",
             {
               "name": "field_grid",
               "type": "grid",
