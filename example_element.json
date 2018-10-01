@@ -108,10 +108,6 @@
       "label": "Location",
       "type": "location"
     },
-    "field_menu": {
-      "label": "Menu",
-      "type": "menu"
-    },
     "field_select_img": {
       "label": "Select-img",
       "type": "select-img",
@@ -197,7 +193,6 @@
             "field_font",
             "field_icon",
             "field_location",
-            "field_menu",
             "field_select_img",
             "field_select_icon",
             {
