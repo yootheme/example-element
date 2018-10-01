@@ -2,7 +2,6 @@
   "name": "example_element_item",
   "title": "Item",
   "width": 600,
-  "defaults": {},
   "fields": {
     "content": {
       "label": "Content"

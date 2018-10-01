@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {concat, assign, pick, get, map, isObject, some, cloneDeep, mapValues, isUndefined, pickBy, forEach, omit, difference, isFunction} = require('lodash');
+const {size, concat, assign, pick, get, map, isObject, some, cloneDeep, mapValues, isUndefined, pickBy, forEach, omit, difference, isFunction} = require('lodash');
 
 const params = {
     _image_dimension: {
@@ -321,6 +321,10 @@ function evaluateComponent(component, name = null) {
         ...collectMixins(component),
         defaults: data && data.props
     };
+
+    if (!size(element.defaults)) {
+        delete element.defaults;
+    }
 
     const params = component.params;
     const panel = isFunction(params) && params(paramsProxy) || isObject(params) && params;
