@@ -1,0 +1,26 @@
+{
+    "name": "example_item",
+    "title": "Item",
+    "width": 600,
+    "fields": {
+        "content": {
+            "label": "Content"
+        },
+        "link": "${LINK}",
+        "image": "${IMAGE}",
+        "image2": {
+            "label": "Image 2",
+            "type": "image"
+        }
+    },
+    "fieldset": {
+        "default": {
+            "fields": [
+                "content",
+                "link",
+                "image",
+                "image2"
+            ]
+        }
+    }
+}

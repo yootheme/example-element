@@ -3,10 +3,10 @@
 return [
 
     // Module name
-    'name' => 'yootheme/example-element',
+    'name' => 'yootheme/example',
 
     // How this element is referenced inside the builder
-    'builder' => 'example_element',
+    'builder' => 'example',
 
     // Render this element on the website
     'render' => function ($element) {
@@ -16,8 +16,8 @@ return [
     'events' => [
 
         'builder.init' => function ($elements, $builder) {
-            $elements->set('example_element', json_decode(file_get_contents("{$this->path}/example_element.json"), true));
-            $elements->set('example_element_item', json_decode(file_get_contents("{$this->path}/example_element_item.json"), true));
+            $elements->set('example', json_decode(file_get_contents("{$this->path}/element.json"), true));
+            $elements->set('example_item', json_decode(file_get_contents("{$this->path}/element_item.json"), true));
         }
 
     ],
