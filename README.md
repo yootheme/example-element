@@ -8,13 +8,13 @@ This is an example element for the YOOtheme Pro page builder. Add it to your chi
 
 1. Create and activate a [child theme](https://yootheme.com/support/yootheme-pro/joomla/child-themes) for YOOtheme Pro.
 2. Create a folder `example` inside the child theme, so that it is located at `yootheme_child/builder/example`
-3. Go to Joomla and open the YOOtheme Pro page builder. Add a new element and select the `Example` element.
+3. Go to Joomla and open the YOOtheme Pro page builder. Add a new element and select the *Example* element.
 
 ### WordPress
 
 1. Create and activate a [child theme](https://yootheme.com/support/yootheme-pro/wordpress/child-themes) for YOOtheme Pro.
 2. Create a folder `example` inside the child theme, so that it is located at `yootheme-child/builder/example`
-3. Go to Joomla and open the YOOtheme Pro page builder. Add a new element and select the `Example` element.
+3. Go to Joomla and open the YOOtheme Pro page builder. Add a new element and select the *Example* element.
 
 ## Files
 
