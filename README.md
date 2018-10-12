@@ -1,6 +1,6 @@
 # Example Element
 
-This is an example element for the YOOtheme Pro page builder. Add it to your child theme and use it as a starter for your own custom elements.
+This is an example element for the YOOtheme Pro page builder. Add it to your child theme and use it as a starter for your own custom elements. There is an comprehensive documentation available on how to [create a custom element](https://yootheme.com/support/yootheme-pro/joomla/custom-elements).
 
 ## Install
 
