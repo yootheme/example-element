@@ -1,0 +1,63 @@
+{
+    "@import": "./element.php",
+    "name": "example",
+    "title": "Example",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "container": true,
+    "width": 500,
+    "defaults": {
+        "select": 1
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+
+        "content": {
+            "label": "Content Items",
+            "type": "content-items",
+            "title": "content",
+            "item": "example_item"
+        },
+
+        "title": {
+            "label": "Text",
+            "type": "text"
+        },
+
+        "select": {
+            "label": "Select",
+            "description": "Muted text that appears below the field",
+            "type": "select",
+            "options": {
+                "Option 1": 0,
+                "Option 2": 1,
+                "Option 3": 2
+            }
+        }
+
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Tab 1",
+                    "fields": [
+                        "content"
+                    ]
+                },
+                {
+                    "title": "Tab 2",
+                    "fields": [
+                        "title",
+                        "select"
+                    ]
+                }
+            ]
+        }
+    }
+}

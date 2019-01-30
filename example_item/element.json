@@ -1,0 +1,30 @@
+{
+    "name": "example_item",
+    "title": "Example Item",
+    "width": 500,
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+
+        "image": {
+            "label": "Image",
+            "type": "image"
+        },
+
+        "content": {
+            "label": "Content",
+            "type": "text"
+        }
+
+    },
+    "fieldset": {
+        "default": {
+            "fields": [
+                "image",
+                "content"
+            ]
+        }
+    }
+}
