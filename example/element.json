@@ -1,7 +1,7 @@
 {
     "@import": "./element.php",
     "name": "example",
-    "title": "Example Element",
+    "title": "Example",
     "icon": "${url:images/icon.svg}",
     "iconSmall": "${url:images/iconSmall.svg}",
     "element": true,
@@ -17,20 +17,20 @@
     "fields": {
 
         "content": {
-            "label": "Content Items",
+            "label": "Items",
             "type": "content-items",
             "title": "content",
             "item": "example_item"
         },
 
         "title": {
-            "label": "Text",
+            "label": "Title",
             "type": "text"
         },
 
         "select": {
             "label": "Select",
-            "description": "Muted text that appears below the field",
+            "description": "A description text that appears below the field",
             "type": "select",
             "options": {
                 "Option 1": 0,

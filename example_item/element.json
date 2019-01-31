@@ -1,6 +1,6 @@
 {
     "name": "example_item",
-    "title": "Example Item",
+    "title": "Item",
     "width": 500,
     "templates": {
         "render": "./templates/template.php",
@@ -8,22 +8,28 @@
     },
     "fields": {
 
-        "image": {
-            "label": "Image",
-            "type": "image"
+        "title": {
+            "label": "Title",
+            "type": "text"
         },
 
         "content": {
             "label": "Content",
-            "type": "text"
+            "type": "editor"
+        },
+
+        "image": {
+            "label": "Image",
+            "type": "image"
         }
 
     },
     "fieldset": {
         "default": {
             "fields": [
-                "image",
-                "content"
+                "title",
+                "content",
+                "image"
             ]
         }
     }
