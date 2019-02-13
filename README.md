@@ -22,8 +22,9 @@ This is an example element for the YOOtheme Pro page builder. Add it to your chi
 | ------------------------ | ---------------------------------------------- |
 | `element.json`           | Defines the element configuration and settings |
 | `element.php`            | Extends the element functionality (optional)   |
-| `templates/template.php` | Renders the actual front-end markup            |
-| `templates/content.php`  | Renders the content which is saved in the page |
+| `templates/content.php`  | Renders the markup which is saved in the page. It's used by the system search and the markup which is left behind when uninstalling YOOtheme Pro.|
+| `templates/template.php` | Renders the markup which is served to the client |
+
 | `images/icon.svg`        | The icon shown in the element picker           |
 | `images/iconSmall.svg`   | The icon shown in the builder layout overview  |
 
