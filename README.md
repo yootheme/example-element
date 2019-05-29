@@ -40,6 +40,12 @@ Here is a overview of the variables which are available when rendering an elemen
 
 ## Migration
 
+### v1.20.0
+
+- [UPGRADE-1.20.0.md](UPGRADE-1.20.0.md)
+
+### v1.18.0
+
 The first step to upgrade a custom element is to update the file structure of your element. This shows the old and new file structure of our example element. Note: each element has now its own folder, so for our example element we have `/example` and `/example_item`.
 
 | Old File                    | New File                              |
