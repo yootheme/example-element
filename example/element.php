@@ -18,7 +18,6 @@ return [
             $params['parent']; // Parent element (stdClass)
             $params['builder']; // Builder instance (YOOtheme\Builder)
             $params['type']; // Element definition (YOOtheme\Builder\ElementType)
-            $params['app']; // Application instance (YOOtheme\Application)
 
         },
 
