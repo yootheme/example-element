@@ -85,4 +85,4 @@ Update your `element.json` configuration file and define your icons and template
 
 ### Templates
 
-The templates need to be updated in order to use the different variables to render a element. Until now the variable `$element` was used to access field properties or to iterate the children. Instead of using `$element['field_name']` to access a property you will now use `$props['field_name']`. Please refer to the [templating section](#templating) for all available variables.
+The templates need to be updated in order to use the different variables to render an element. Until now the variable `$element` was used to access field properties or to iterate the children. Instead of using `$element['field_name']` to access a property you will now use `$props['field_name']`. Please refer to the [templating section](#templating) for all available variables.
