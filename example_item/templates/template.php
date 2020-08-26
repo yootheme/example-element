@@ -1,22 +1,69 @@
 <?php
 
+// Display
+foreach (['title', 'content', 'image', 'link'] as $key) {
+    if (!$element["show_{$key}"]) { $props[$key] = ''; }
+}
+
+// Item
 $el = $this->el('div', [
-
     'class' => [
-        'example-item'
+        'el-item uk-panel'
     ]
-
 ]);
 
-// use props from the parent element node
-$element;
+// Title
+$title = $this->el($element['title_element'], [
+    'class' => [
+        'el-title',
+    ],
+]);
+
+// Content
+$content = $this->el('div', [
+    'class' => [
+        'el-content uk-panel',
+    ],
+]);
+
+$image = $this->el('image', [
+    'class' => [
+        'el-image',
+    ],
+    'src' => $props['image'],
+    'alt' => $props['image_alt'],
+    'width' => $element['image_width'],
+    'height' => $element['image_height'],
+    'thumbnail' => true,
+]);
+
+// Link
+$link = $this->el('a', [
+    'class' => [
+        'el-link uk-button uk-button-default',
+    ],
+    'href' => $props['link'],
+    'uk-scroll' => strpos($props['link'], '#') === 0,
+]);
 
 ?>
 
-<?= $el($props, $attrs) ?>
+<?= $el($element, $attrs) ?>
 
-    <h1>Example Item</h1>
-    <p><?= $props['content'] ?></p>
-    <img src="<?= $props['image'] ?>">
+        <?php if ($props['image']) : ?>
+        <?= $image($element, $props['image']) ?>
+        <?php endif ?>
 
-</div>
+        <?php if ($props['title']) : ?>
+        <?= $title($element, $props['title']) ?>
+        <?php endif ?>
+
+        <?php if ($props['content']) : ?>
+        <?= $content($element, $props['content']) ?>
+        <?php endif ?>
+
+        <?php if ($props['link'] && $element['link_text']) : ?>
+        <?= $link($element, $element['link_text']) ?>
+        <?php endif ?>
+
+<?= $el->end() ?>

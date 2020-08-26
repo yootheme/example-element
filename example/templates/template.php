@@ -1,28 +1,28 @@
 <?php
 
+// Element
 $el = $this->el('div', [
-
     'class' => [
         'example-element'
     ]
+]);
 
+// Grid
+$grid = $this->el('ul', [
+    'class' => [
+        'uk-child-width-1-{grid_columns}',
+    ],
+    'uk-grid' => true,
 ]);
 
 ?>
 
 <?= $el($props, $attrs) ?>
 
-    <?php // render node title field by using $props['title'] ?>
-    <h1><?= $props['title'] ?></h1>
-
-    <?php // render node select field by using $props['select'] ?>
-    <p>Option: <?= $props['select'] ?></p>
-
-    <ul>
-        <?php // render children and pass $props as $element to every child node ?>
+    <?= $grid($props) ?>
         <?php foreach ($children as $child) : ?>
         <li><?= $builder->render($child, ['element' => $props]) ?></li>
         <?php endforeach ?>
-    </ul>
+    <?= $grid->end() ?>
 
 </div>

@@ -6,30 +6,60 @@
         "render": "./templates/template.php",
         "content": "./templates/content.php"
     },
+    "placeholder": {
+        "props": {
+            "title": "Title",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": ""
+        }
+    },
     "fields": {
-
         "title": {
             "label": "Title",
-            "type": "text"
+            "source": true
         },
-
         "content": {
             "label": "Content",
-            "type": "editor"
+            "type": "editor",
+            "source": true
         },
-
         "image": {
             "label": "Image",
-            "type": "image"
-        }
-
+            "type": "image",
+            "source": true
+        },
+        "image_alt": {
+            "label": "Image Alt",
+            "enable": "image",
+            "source": true
+        },
+        "link": {
+            "label": "Link",
+            "type": "link",
+            "description": "Enter or pick a link, an image or a video file.",
+            "attrs": {
+                "placeholder": "http://"
+            },
+            "source": true
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
     },
     "fieldset": {
         "default": {
+            "type": "tabs",
             "fields": [
-                "title",
-                "content",
-                "image"
+                {
+                    "title": "Content",
+                    "fields": [
+                        "title",
+                        "content",
+                        "image",
+                        "image_alt",
+                        "link"
+                    ]
+                },
+                "${builder.advancedItem}"
             ]
         }
     }

@@ -1,7 +1,15 @@
-<div>
+<?php if ($props['image']) : ?>
+<img src="<?= $props['image'] ?>" alt="<?= $props['image_alt'] ?>">
+<?php endif ?>
 
-    <h1>Example Item</h1>
-    <p><?= $props['content'] ?></p>
-    <img src="<?= $props['image'] ?>">
+<?php if ($props['title']) : ?>
+<<?= $element['title_element'] ?>><?= $props['title'] ?></<?= $element['title_element'] ?>>
+<?php endif ?>
 
-</div>
+<?php if ($props['content']) : ?>
+<div><?= $props['content'] ?></div>
+<?php endif ?>
+
+<?php if ($props['link']) : ?>
+<p><a href="<?= $props['link'] ?>"><?= $element['link_text'] ?></a></p>
+<?php endif ?>
