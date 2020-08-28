@@ -25,4 +25,4 @@ $grid = $this->el('ul', [
         <?php endforeach ?>
     <?= $grid->end() ?>
 
-</div>
+<?= $el->end() ?>
