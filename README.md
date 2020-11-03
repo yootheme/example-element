@@ -1,6 +1,6 @@
 # Example Element
 
-This is the example element for the YOOtheme Pro page builder. It demonstrates how to configure an element, how to extend its functionality and how to make use of the different field types. For more information on how to create a custom element read the [elements](https://yootheme.com/support/yootheme-pro/joomla/developers-elements.md) documentation.
+This is the example element for the YOOtheme Pro page builder. It demonstrates how to configure an element, how to extend its functionality and how to make use of the different field types. For more information on how to create a custom element read the [elements](https://yootheme.com/support/yootheme-pro/joomla/developers-elements) documentation.
 
 ## Quick Installation
 
