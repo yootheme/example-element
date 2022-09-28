@@ -32,8 +32,10 @@ $image = $this->el('image', [
     ],
     'src' => $props['image'],
     'alt' => $props['image_alt'],
+    'loading' => $element['image_loading'] ? false : null,
     'width' => $element['image_width'],
     'height' => $element['image_height'],
+    'focal_point' => $element['image_focal_point'],
     'thumbnail' => true,
 ]);
 
