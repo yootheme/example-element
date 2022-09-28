@@ -42,6 +42,23 @@
             },
             "source": true
         },
+        "image_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true,
+            "enable": "image"
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
     },
@@ -57,6 +74,16 @@
                         "image",
                         "image_alt",
                         "link"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Image",
+                            "type": "group",
+                            "fields": ["image_focal_point"]
+                        }
                     ]
                 },
                 "${builder.advancedItem}"
