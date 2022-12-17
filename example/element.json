@@ -123,7 +123,8 @@
         "text_align": "${builder.text_align_justify}",
         "text_align_breakpoint": "${builder.text_align_breakpoint}",
         "text_align_fallback": "${builder.text_align_justify_fallback}",
-        "item_animation": "${builder.animation}",
+        "animation": "${builder.animation}",
+        "item_animation": "${builder.item_animation}",
         "_parallax_button": "${builder._parallax_button}",
         "visibility": "${builder.visibility}",
         "name": "${builder.name}",
@@ -222,6 +223,7 @@
                                 "text_align",
                                 "text_align_breakpoint",
                                 "text_align_fallback",
+                                "animation",
                                 "item_animation",
                                 "_parallax_button",
                                 "visibility"
