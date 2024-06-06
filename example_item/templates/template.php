@@ -45,7 +45,7 @@ $link = $this->el('a', [
         'el-link uk-button uk-button-default',
     ],
     'href' => $props['link'],
-    'uk-scroll' => strpos($props['link'], '#') === 0,
+    'uk-scroll' => str_contains((string) $props['link'], '#'),
 ]);
 
 ?>
