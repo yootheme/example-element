@@ -1,6 +1,7 @@
 {
     "name": "example",
     "title": "Example",
+    "group": "custom",
     "icon": "${url:images/icon.svg}",
     "iconSmall": "${url:images/iconSmall.svg}",
     "element": true,
