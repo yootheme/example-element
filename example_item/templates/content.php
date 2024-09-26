@@ -2,11 +2,11 @@
 <img src="<?= $props['image'] ?>" alt="<?= $props['image_alt'] ?>">
 <?php endif ?>
 
-<?php if ($props['title']) : ?>
+<?php if ($props['title'] != '') : ?>
 <<?= $element['title_element'] ?>><?= $props['title'] ?></<?= $element['title_element'] ?>>
 <?php endif ?>
 
-<?php if ($props['content']) : ?>
+<?php if ($props['content'] != '') : ?>
 <div><?= $props['content'] ?></div>
 <?php endif ?>
 
