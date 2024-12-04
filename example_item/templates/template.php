@@ -8,8 +8,8 @@ foreach (['title', 'content', 'image', 'link'] as $key) {
 // Item
 $el = $this->el('div', [
     'class' => [
-        'el-item uk-panel'
-    ]
+        'el-item uk-panel',
+    ],
 ]);
 
 // Title

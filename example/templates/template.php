@@ -4,7 +4,7 @@
 $el = $this->el('div', [
     'class' => [
         'example-element'
-    ]
+    ],
 ]);
 
 // Grid

@@ -21,9 +21,9 @@
     },
     "placeholder": {
         "children": [
-            {"type": "example_item", "props": {}},
-            {"type": "example_item", "props": {}},
-            {"type": "example_item", "props": {}}
+            { "type": "example_item", "props": {} },
+            { "type": "example_item", "props": {} },
+            { "type": "example_item", "props": {} }
         ]
     },
     "fields": {
@@ -33,7 +33,7 @@
             "item": "example_item",
             "media": {
                 "type": "image",
-                "item": {"title": "title", "image": "src"}
+                "item": { "title": "title", "image": "src" }
             }
         },
         "show_title": {
@@ -163,17 +163,13 @@
                             "label": "Grid",
                             "type": "group",
                             "divider": true,
-                            "fields": [
-                                "grid_columns"
-                            ]
+                            "fields": ["grid_columns"]
                         },
                         {
                             "label": "Title",
                             "type": "group",
                             "divider": true,
-                            "fields": [
-                                "title_element"
-                            ]
+                            "fields": ["title_element"]
                         },
                         {
                             "label": "Image",
@@ -185,10 +181,7 @@
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
                                     "type": "grid",
                                     "width": "1-2",
-                                    "fields": [
-                                        "image_width",
-                                        "image_height"
-                                    ]
+                                    "fields": ["image_width", "image_height"]
                                 },
                                 "image_loading"
                             ]
@@ -197,9 +190,7 @@
                             "label": "Link",
                             "type": "group",
                             "divider": true,
-                            "fields": [
-                                "link_text"
-                            ]
+                            "fields": ["link_text"]
                         },
                         {
                             "label": "General",
