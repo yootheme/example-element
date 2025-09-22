@@ -1,10 +1,101 @@
 <?php
 
 return [
+    'name' => 'example_item',
+    'title' => 'Item',
+    'width' => 500,
+    'placeholder' => [
+        'props' => [
+            'title' => 'Title',
+            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'image' => ''
+        ]
+    ],
+    'templates' => [
+        'render' => __DIR__ . '/templates/template.php',
+        'content' => __DIR__ . '/templates/content.php'
+    ],
     'transforms' => [
         'render' => function ($node) {
             // Don't render element if content fields are empty
             return $node->props['title'] != '' || $node->props['content'] != '' || $node->props['image'];
         },
     ],
+    'fields' => [
+        'title' => [
+            'label' => 'Title',
+            'source' => true
+        ],
+        'content' => [
+            'label' => 'Content',
+            'type' => 'editor',
+            'source' => true
+        ],
+        'image' => [
+            'label' => 'Image',
+            'type' => 'image',
+            'source' => true
+        ],
+        'image_alt' => [
+            'label' => 'Image Alt',
+            'enable' => 'image',
+            'source' => true
+        ],
+        'link' => [
+            'label' => 'Link',
+            'type' => 'link',
+            'description' => 'Enter or pick a link, an image or a video file.',
+            'attrs' => [
+                'placeholder' => 'http://'
+            ],
+            'source' => true
+        ],
+        'image_focal_point' => [
+            'label' => 'Focal Point',
+            'description' => 'Set a focal point to adjust the image focus when cropping.',
+            'type' => 'select',
+            'options' => [
+                'Top Left' => 'top-left',
+                'Top Center' => 'top-center',
+                'Top Right' => 'top-right',
+                'Center Left' => 'center-left',
+                'Center Center' => '',
+                'Bottom Left' => 'bottom-left',
+                'Bottom Center' => 'bottom-center',
+                'Bottom Right' => 'bottom-right'
+            ],
+            'source' => true,
+            'enable' => 'image'
+        ],
+        'status' => '${builder.statusItem}',
+        'source' => '${builder.source}'
+    ],
+    'fieldset' => [
+        'default' => [
+            'type' => 'tabs',
+            'fields' => [
+                [
+                    'title' => 'Content',
+                    'fields' => [
+                        'title',
+                        'content',
+                        'image',
+                        'image_alt',
+                        'link'
+                    ]
+                ],
+                [
+                    'title' => 'Settings',
+                    'fields' => [
+                        [
+                            'label' => 'Image',
+                            'type' => 'group',
+                            'fields' => ['image_focal_point']
+                        ]
+                    ]
+                ],
+                '${builder.advancedItem}'
+            ]
+        ]
+    ]
 ];
