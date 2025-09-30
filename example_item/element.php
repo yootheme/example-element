@@ -68,7 +68,10 @@ return [
             'enable' => 'image'
         ],
         'status' => '${builder.statusItem}',
-        'source' => '${builder.source}'
+        'source' => '${builder.source}',
+        'id' => '${builder.id}',
+        'class' => '${builder.cls}',
+        'attributes' => '${builder.attrs}',
     ],
     'fieldset' => [
         'default' => [
